@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:pixel_to_page/fontstyles.dart';
 
 class OverlayFormDialog extends StatefulWidget {
   const OverlayFormDialog({Key? key}) : super(key: key);
@@ -134,17 +135,15 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
             ),
           ),
           const SizedBox(width: 16),
-          const Expanded(
+           Expanded(
             child: Text(
               'New Entry',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF1a1a1a),
-                letterSpacing: -0.5,
-              ),
+              style: AppFontStyles.bold.copyWith(
+    fontSize: 22,
+    color: Color(0xFF1a1a1a),
+    letterSpacing: -0.5,
             ),
-          ),
+          ),),
           IconButton(
             icon: const Icon(Icons.close, size: 22),
             onPressed: () => Navigator.of(context).pop(),
@@ -162,15 +161,15 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
       children: [
         Text(
           'Title',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey[700],
-            letterSpacing: 0.2,
-          ),
+            style: AppFontStyles.regular.copyWith(
+              fontSize: 14,
+              color: Colors.grey[700],
+              letterSpacing: 0.2,
+            )
         ),
         const SizedBox(height: 8),
         TextFormField(
+          style: AppFontStyles.regular,
           controller: _titleController,
           decoration: InputDecoration(
             hintText: 'Enter a title',
@@ -208,12 +207,11 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
       children: [
         Text(
           'Description',
-          style: TextStyle(
+          style: AppFontStyles.regular.copyWith(
             fontSize: 14,
-            fontWeight: FontWeight.w600,
             color: Colors.grey[700],
             letterSpacing: 0.2,
-          ),
+          )
         ),
         const SizedBox(height: 8),
         TextFormField(
@@ -255,12 +253,11 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
       children: [
         Text(
           'Image',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey[700],
-            letterSpacing: 0.2,
-          ),
+            style: AppFontStyles.regular.copyWith(
+              fontSize: 14,
+              color: Colors.grey[700],
+              letterSpacing: 0.2,
+            )
         ),
         const SizedBox(height: 8),
         if (_imageBytes != null) ...[
@@ -300,10 +297,10 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
               ),
               child: Text(
                 _imageName ?? 'Image',
-                style: const TextStyle(
+                style: AppFontStyles.regular.copyWith(
+                  fontSize: 14,
                   color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
+                  letterSpacing: 0.2,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -337,11 +334,11 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
             const SizedBox(width: 8),
             Text(
               hasImage ? 'Change Image' : 'Upload Image',
-              style: TextStyle(
-                color: Colors.blue[700],
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-              ),
+              style:AppFontStyles.regular.copyWith(
+              fontSize: 14,
+              color: Colors.blue[700],
+              letterSpacing: 0.2,
+            )
             ),
           ],
         ),
@@ -374,14 +371,13 @@ class _OverlayFormDialogState extends State<OverlayFormDialog> {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        child: const Text(
+        child:  Text(
           'Submit',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-            letterSpacing: 0.5,
-          ),
+            style: AppFontStyles.regular.copyWith(
+              fontSize: 14,
+              color: Colors.white,
+              letterSpacing: 0.2,
+            )
         ),
       ),
     );

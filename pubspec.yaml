@@ -50,7 +50,7 @@ dev_dependencies:
   star_menu: ^4.0.1
   image_picker: ^1.2.0
   flutter_map: ^8.2.2
-
+  firebase_core: ^4.2.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

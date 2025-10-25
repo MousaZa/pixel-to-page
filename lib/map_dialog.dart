@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
+import 'fontstyles.dart';
+
 class MapDialog extends StatefulWidget {
   const MapDialog({Key? key}) : super(key: key);
 
@@ -24,6 +26,11 @@ class _MapDialogState extends State<MapDialog> {
       SnackBar(
         content: Text(
           'Location: ${_selectedLocation.latitude.toStringAsFixed(4)}, ${_selectedLocation.longitude.toStringAsFixed(4)}',
+            style: AppFontStyles.regular.copyWith(
+              fontSize: 14,
+              color: Colors.grey[700],
+              letterSpacing: 0.2,
+            )
         ),
         behavior: SnackBarBehavior.floating,
       ),
@@ -91,22 +98,22 @@ class _MapDialogState extends State<MapDialog> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                 Text(
                   'Select Location',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF1a1a1a),
-                    letterSpacing: -0.5,
-                  ),
+                  style: AppFontStyles.bold.copyWith(
+              fontSize: 18,
+              color: Colors.black,
+              letterSpacing: 0.2,
+            )
                 ),
                 const SizedBox(height: 2),
                 Text(
                   'Tap anywhere on the map',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey[600],
-                  ),
+                    style: AppFontStyles.regular.copyWith(
+                      fontSize: 14,
+                      color: Colors.grey[700],
+                      letterSpacing: 0.2,
+                    )
                 ),
               ],
             ),
@@ -202,12 +209,11 @@ class _MapDialogState extends State<MapDialog> {
                     children: [
                       Text(
                         'Coordinates',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.grey[600],
-                          letterSpacing: 0.5,
-                        ),
+                          style: AppFontStyles.regular.copyWith(
+                            fontSize: 14,
+                            color: Colors.grey[700],
+                            letterSpacing: 0.2,
+                          )
                       ),
                       const SizedBox(height: 2),
                       Text(
@@ -253,11 +259,11 @@ class _MapDialogState extends State<MapDialog> {
               ),
               child: Text(
                 'Cancel',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey[700],
-                ),
+                  style: AppFontStyles.regular.copyWith(
+                    fontSize: 14,
+                    color: Colors.grey[700],
+                    letterSpacing: 0.2,
+                  )
               ),
             ),
           ),
@@ -288,14 +294,13 @@ class _MapDialogState extends State<MapDialog> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   'Confirm Location',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                    letterSpacing: 0.5,
-                  ),
+                    style: AppFontStyles.bold.copyWith(
+                      fontSize: 14,
+                      color: Colors.white,
+                      letterSpacing: 0.2,
+                    )
                 ),
               ),
             ),
